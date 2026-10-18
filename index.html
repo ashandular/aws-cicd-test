@@ -3,24 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Modern Login</title>
+    <title>Ashan Dulara | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Welcome Back!</h2>
-        <form action="#">
-            <div class="input-group">
-                <label for="username">Email or Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="login-btn">Log In</button>
-            <p class="signup-link">Don't have an account? <a href="#">Sign up</a></p>
-        </form>
-    </div>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Ashan<span>.</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hi, I'm <span>Ashan Dulara</span></h1>
+            <p>Software Engineering Student | Full-Stack Developer</p>
+            <p class="location">📍 Embilipitiya, Sri Lanka</p>
+            <a href="#contact" class="btn">Let's Connect</a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <h2>About Me</h2>
+        <p>I am a passionate software engineering developer currently enrolled in the ICD program at iCET. I specialize in building responsive web applications and deploying them using modern cloud infrastructure and DevOps practices.</p>
+    </section>
+
+    <section id="skills" class="section skills">
+        <h2>My Tech Stack</h2>
+        <div class="skill-tags">
+            <span class="tag">Java & Spring Boot</span>
+            <span class="tag">JavaScript & React</span>
+            <span class="tag">Node.js & Express</span>
+            <span class="tag">HTML, CSS & Bootstrap</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">AWS EC2 & CI/CD</span>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <h2>Get In Touch</h2>
+        <p>Currently open for new opportunities and interesting projects.</p>
+        <a href="mailto:hello@example.com" class="btn outline-btn">Say Hello</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ashan Dulara. Built with GitHub Actions & AWS.</p>
+    </footer>
 </body>
 </html>
