@@ -8,17 +8,20 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: Deploy to EC2 server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
+          script_stop: true
           script: |
-            sudo rm -rf /var/www/html/*
-            sudo git clone https://github.com/ashandular/aws-cicd-test.git /tmp/repo
-            sudo cp -r /tmp/repo/* /var/www/html/
             sudo rm -rf /tmp/repo
+            git clone https://github.com/ashandular/aws-cicd-test.git /tmp/repo
+            sudo rm -rf /var/www/html/*
+            sudo cp -r /tmp/repo/. /var/www/html/
+            sudo rm -rf /var/www/html/.git /var/www/html/.github
+            sudo chown -R www-data:www-data /var/www/html
+            sudo find /var/www/html -type d -exec chmod 755 {} \;
+            sudo find /var/www/html -type f -exec chmod 644 {} \;
+            rm -rf /tmp/repo
